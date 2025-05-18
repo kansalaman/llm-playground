@@ -38,7 +38,7 @@ from accelerate import Accelerator, DistributedType
 ########################################################################
 
 
-MAX_GPU_BATCH_SIZE = 16
+MAX_GPU_BATCH_SIZE = 64
 EVAL_BATCH_SIZE = 32
 
 def get_dataloaders(accelerator: Accelerator, batch_size: int = 16):
@@ -191,7 +191,7 @@ def main(config):
 
 
 def main1():
-    config = {"lr": 2e-5, "num_epochs": 3, "seed": 42, "batch_size": 16}
+    config = {"lr": 2e-5, "num_epochs": 10, "seed": 42, "batch_size": 128}
     main(config)
 
 
